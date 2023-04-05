@@ -1,0 +1,182 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "map pt 1.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "E:/JV1/projet-mc/sans titre.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 11400,
+                "y": 8934
+            }
+        },
+        "E:/JV1/projet-mc/sans titre.tmx#tuile test": {
+            "scaleInDock": 1
+        },
+        "E:/JV1/projet-mc/sans titre.tmx#tuileP": {
+            "scaleInDock": 1
+        },
+        "map pt 1.tmx": {
+            "scale": 0.0625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 5312,
+                "y": -296
+            }
+        },
+        "map pt 1.tmx#Tuile": {
+            "scaleInDock": 3
+        },
+        "map pt 1.tmx#tuile test": {
+            "scaleInDock": 1.5
+        },
+        "map pt 2.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 4128,
+                "y": 3198
+            }
+        },
+        "map pt 2.tmx#Tuile": {
+            "scaleInDock": 1
+        },
+        "map pt 2.tmx#tuile test": {
+            "scaleInDock": 1
+        },
+        "map pt 3.tmx": {
+            "scale": 0.5141875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 958.7942141728456,
+                "y": 798.3469065272882
+            }
+        },
+        "map pt 3.tmx#tuile test": {
+            "scaleInDock": 1
+        },
+        "map pt 4.tmx": {
+            "scale": 0.11793291284403669,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2959.309590373162,
+                "y": 3480.792512458977
+            }
+        },
+        "map pt 4.tmx#tuile test": {
+            "scaleInDock": 1
+        },
+        "map pt 5.tmx": {
+            "scale": 0.0625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 3232,
+                "y": 3992
+            }
+        },
+        "map pt 5.tmx#tuile test": {
+            "scaleInDock": 1
+        },
+        "map pt 6.tmx": {
+            "scale": 0.7738541666666666,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 721.0660923408266,
+                "y": 529.1694709920583
+            }
+        },
+        "map pt 6.tmx#tuile test": {
+            "scaleInDock": 1
+        },
+        "map_pt_1.json": {
+            "scale": 3,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 4256,
+                "y": 338.5
+            }
+        },
+        "map_pt_1.json#Tuile": {
+            "scaleInDock": 2
+        },
+        "map_pt_1.tmx": {
+            "scale": 0.13929375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 4005.9227352268144,
+                "y": 2401.399919235429
+            }
+        },
+        "map_pt_1.tmx#Tuile": {
+            "scaleInDock": 1
+        },
+        "map_pt_1.tmx#tuile test": {
+            "scaleInDock": 1
+        },
+        "map_pt_2.json": {
+            "scale": 0.33,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 2784.848484848485,
+                "y": 1146.969696969697
+            }
+        },
+        "map_pt_2.json#Tuile": {
+            "scaleInDock": 1
+        },
+        "map_pt_2.json#tuile test": {
+            "scaleInDock": 1
+        },
+        "map_pt_2.tmx": {
+            "scale": 0.125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 3920,
+                "y": 3884
+            }
+        },
+        "map_pt_2.tmx#Tuile": {
+            "scaleInDock": 1
+        },
+        "map_pt_2.tmx#tuile test": {
+            "scaleInDock": 1
+        }
+    },
+    "last.exportedFilePath": "E:/JV1/projet-mc/jeux/map",
+    "last.imagePath": "E:/JV1/projet-mc/jeux/map",
+    "map.height": 33,
+    "map.lastUsedExportFilter": "Fichiers de carte JSON (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.width": 45,
+    "openFiles": [
+        "map pt 1.tmx",
+        "map pt 2.tmx",
+        "map pt 3.tmx",
+        "map pt 4.tmx",
+        "map pt 5.tmx",
+        "map pt 6.tmx"
+    ],
+    "project": "map.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "map_pt_2.tmx",
+        "map_pt_1.tmx",
+        "map pt 6.tmx",
+        "map pt 5.tmx",
+        "map pt 4.tmx",
+        "map pt 3.tmx",
+        "map pt 2.tmx",
+        "map pt 1.tmx",
+        "E:/JV1/projet-mc/sans titre.tmx"
+    ],
+    "tileset.embedInMap": true
+}
