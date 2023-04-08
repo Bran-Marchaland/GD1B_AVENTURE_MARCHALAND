@@ -3,13 +3,14 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "map pt 1.tmx",
+    "activeFile": "map_pt_2.tmx",
     "expandedProjectPaths": [
         "."
     ],
     "fileStates": {
         "": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "E:/JV1/projet-mc/sans titre.tmx": {
             "scale": 0.25,
@@ -126,8 +127,8 @@
             "scale": 0.33,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 2784.848484848485,
-                "y": 1146.969696969697
+                "x": 5278.787878787878,
+                "y": 5016.666666666667
             }
         },
         "map_pt_2.json#Tuile": {
@@ -158,16 +159,15 @@
     "map.lastUsedFormat": "tmx",
     "map.width": 45,
     "openFiles": [
-        "map pt 1.tmx",
-        "map pt 2.tmx",
-        "map pt 3.tmx",
-        "map pt 4.tmx",
-        "map pt 5.tmx",
-        "map pt 6.tmx"
+        "map_pt_1.json",
+        "map_pt_2.json",
+        "map_pt_2.tmx"
     ],
     "project": "map.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "map_pt_1.json",
+        "map_pt_2.json",
         "map_pt_2.tmx",
         "map_pt_1.tmx",
         "map pt 6.tmx",

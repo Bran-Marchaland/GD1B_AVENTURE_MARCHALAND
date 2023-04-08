@@ -1,3 +1,8 @@
+var vie = 5;
+
+
+
+
 class map_pt_1 extends Phaser.Scene {
     constructor() {
         super('map_pt_1');
@@ -8,6 +13,8 @@ class map_pt_1 extends Phaser.Scene {
         this.load.tilemapTiledJSON("mapPt1","map/map_pt_1.json");
         this.load.image("phaser_assets", "map/tuile.png");
         this.load.spritesheet('perso','sprite/perso_pixel.png',
+                { frameWidth: 32, frameHeight: 32 });
+        this.load.spritesheet('monster','sprite/enemie.png',
                 { frameWidth: 32, frameHeight: 32 });
     }
 
@@ -21,7 +28,8 @@ class map_pt_1 extends Phaser.Scene {
         const murSolide = carteDuNiveau.createLayer('mur',tileset);
         const collectible = carteDuNiveau.createLayer('collectible',tileset);
         const tp = carteDuNiveau.createLayer('Teleporteur',tileset);
-
+        this.enemie = this.physics.add.sprite(19*32, 130*32, 'monster');
+        this.physics.add.collider(this.enemie, murSolide);
 
         murSolide.setCollisionByProperty({ estSolide: true }); 
         this.player = this.physics.add.sprite(18*32, 129*32, 'perso');
@@ -33,6 +41,7 @@ class map_pt_1 extends Phaser.Scene {
         this.cameras.main.startFollow(this.player); 
         this.physics.add.collider(this.player,tp,this.phase2,null,this);
         this.clavier = this.input.keyboard.addKeys('S,Q,D,Z,SPACE,SHIFT');
+        this.physics.add.overlap(this.player, this.enemygrp, this.damage, null, this);
 
 
 
@@ -102,8 +111,44 @@ class map_pt_1 extends Phaser.Scene {
             this.player.anims.play('idle', true);
         }
 
+        
+
+
+        
+
+        var distance = Phaser.Math.Distance.Between(this.enemie.x, this.enemie.y, this.player.x, this.player.y);
+        if(distance < 300){
+            this.enemie.setVelocityX(this.player.x-this.enemie.x)
+            this.enemie.setVelocityY(this.player.y-this.enemie.y)
+        }
+        else{this.enemie.setVelocity(0)}
+
+
+        
+        
+        if (vie == 5) {
+                vie.anims.play("5", true);
+            }
+            if (vie == 4) {
+                vie.anims.play("4", true);
+            }
+            if (vie == 3) {
+                vie.anims.play("3", true);
+            }
+            if (vie == 2) {
+                vie.anims.play("2", true);
+            }
+            if (vie == 1) {
+                vie.anims.play("1", true);
+            }
+            if (vie == 0) {
+                scene.stop()
+            }
     }
 
+    Perdvie() {
+        vie -= 1
+    }
 
     phase2(){
         this.scene.start("map_pt_2")
@@ -129,6 +174,8 @@ class map_pt_2 extends Phaser.Scene {
         this.load.image("phaser_assets", "map/tuile.png");
         this.load.spritesheet('perso','sprite/perso_pixel.png',
                 { frameWidth: 32, frameHeight: 32 });
+        this.load.spritesheet('monster','sprite/enemie.png',
+        { frameWidth: 32, frameHeight: 32 });
     }
 
     create(){
@@ -146,12 +193,15 @@ class map_pt_2 extends Phaser.Scene {
         murSolide.setCollisionByProperty({ estSolide: true });
         this.player = this.physics.add.sprite(129*32, 186*32, 'perso');
         this.physics.add.collider(this.player, murSolide);
+        
 
         //tp.setCollisionByExclusion(-1, true);
         this.cameras.main.zoom = 2;
         this.cameras.main.startFollow(this.player); 
         //this.physics.add.collider(this.player,tp,phase2,null,this);
         this.clavier = this.input.keyboard.addKeys('S,Q,D,Z,SPACE,SHIFT');
+        this.enemie = this.physics.add.sprite(130*32, 186*32, 'monster');
+        this.physics.add.collider(this.enemie, murSolide);
 
 
 
