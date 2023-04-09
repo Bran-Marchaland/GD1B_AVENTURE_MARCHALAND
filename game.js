@@ -223,34 +223,34 @@ class map_pt_1 extends Phaser.Scene {
         
         
         if (HP == 10) {
-                this.vie.anims.play("HP10", true);
+                this.vie.anims.play("HP1", true);
             }
             if (HP == 9) {
-                this.vie.anims.play("HP9", true);
-            }
-            if (HP == 8) {
-                this.vie.anims.play("HP8", true);
-            }
-            if (HP == 7) {
-                this.vie.anims.play("HP7", true);
-            }
-            if (HP == 6) {
-                this.vie.anims.play("HP6", true);
-            }
-            if (HP == 5) {
-                this.vie.anims.play("HP5", true);
-            }
-            if (HP == 4) {
-                this.vie.anims.play("HP4", true);
-            }
-            if (HP == 3) {
-                this.vie.anims.play("HP3", true);
-            }
-            if (HP == 2) {
                 this.vie.anims.play("HP2", true);
             }
+            if (HP == 8) {
+                this.vie.anims.play("HP3", true);
+            }
+            if (HP == 7) {
+                this.vie.anims.play("HP4", true);
+            }
+            if (HP == 6) {
+                this.vie.anims.play("HP5", true);
+            }
+            if (HP == 5) {
+                this.vie.anims.play("HP6", true);
+            }
+            if (HP == 4) {
+                this.vie.anims.play("HP7", true);
+            }
+            if (HP == 3) {
+                this.vie.anims.play("HP8", true);
+            }
+            if (HP == 2) {
+                this.vie.anims.play("HP9", true);
+            }
             if (HP == 1) {
-                this.vie.anims.play("HP1", true);
+                this.vie.anims.play("HP10", true);
             }
             if (HP == 0) {
                 this.scene.stop()
