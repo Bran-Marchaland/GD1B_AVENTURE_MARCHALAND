@@ -13,11 +13,11 @@
             "scaleInEditor": 1
         },
         "E:/JV1/projet-mc/sans titre.tmx": {
-            "scale": 0.25,
+            "scale": 0.03125,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 11400,
-                "y": 8934
+                "x": 8656,
+                "y": 8080
             }
         },
         "E:/JV1/projet-mc/sans titre.tmx#tuile test": {
@@ -99,11 +99,11 @@
             "scaleInDock": 1
         },
         "map_pt_1.json": {
-            "scale": 3,
+            "scale": 0.0625,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 4256,
-                "y": 338.5
+                "x": 5992,
+                "y": 1672
             }
         },
         "map_pt_1.json#Tuile": {
@@ -124,31 +124,58 @@
             "scaleInDock": 1
         },
         "map_pt_2.json": {
-            "scale": 0.33,
-            "selectedLayer": 2,
+            "scale": 0.75,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 5278.787878787878,
-                "y": 5016.666666666667
+                "x": 1138,
+                "y": 1558
             }
         },
         "map_pt_2.json#Tuile": {
-            "scaleInDock": 1
+            "scaleInDock": 1.5,
+            "scaleInEditor": 0.125
         },
         "map_pt_2.json#tuile test": {
             "scaleInDock": 1
         },
         "map_pt_2.tmx": {
-            "scale": 0.125,
-            "selectedLayer": 0,
+            "scale": 1.5,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 3920,
-                "y": 3884
+                "x": 4991,
+                "y": 4701
             }
         },
         "map_pt_2.tmx#Tuile": {
-            "scaleInDock": 1
+            "scaleInDock": 0.5,
+            "scaleInEditor": 1
         },
         "map_pt_2.tmx#tuile test": {
+            "scaleInDock": 1
+        },
+        "map_pt_3.json": {
+            "scale": 0.5141875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 961.7114379482192,
+                "y": 800.2917223775373
+            }
+        },
+        "map_pt_3.json#Tuile": {
+            "scaleInDock": 1
+        },
+        "map_pt_3.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 1290,
+                "y": 618
+            }
+        },
+        "map_pt_3.tmx#Tuile": {
+            "scaleInDock": 0.75
+        },
+        "map_pt_3.tmx#tuile test": {
             "scaleInDock": 1
         }
     },
@@ -166,17 +193,18 @@
     "project": "map.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "map_pt_3.tmx",
+        "E:/JV1/projet-mc/sans titre.tmx",
+        "map_pt_2.tmx",
         "map_pt_1.json",
         "map_pt_2.json",
-        "map_pt_2.tmx",
         "map_pt_1.tmx",
         "map pt 6.tmx",
         "map pt 5.tmx",
         "map pt 4.tmx",
         "map pt 3.tmx",
         "map pt 2.tmx",
-        "map pt 1.tmx",
-        "E:/JV1/projet-mc/sans titre.tmx"
+        "map pt 1.tmx"
     ],
     "tileset.embedInMap": true
 }
