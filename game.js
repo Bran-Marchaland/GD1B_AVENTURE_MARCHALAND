@@ -3,7 +3,7 @@ var invincible = false;
 var CD = true;
 var i = 0;
 var nbrP = 1;
-
+var crossbow = false;
 class map_pt_1 extends Phaser.Scene {
     constructor() {
         super('map_pt_1');
@@ -74,7 +74,7 @@ class map_pt_1 extends Phaser.Scene {
             this.enemie.create(64*32, 33*32, 'monster');
             this.enemie.create(40*32, 53*32, 'monster');
         murSolide.setCollisionByProperty({ estSolide: true }); 
-        this.player = this.physics.add.sprite(133*32, 13*32, 'perso');
+        this.player = this.physics.add.sprite(23*32, 133*32, 'perso');
         this.physics.add.collider(this.player, murSolide);
         this.physics.add.overlap(this.player, this.potion,this.Drop,null,this);
 
@@ -200,6 +200,20 @@ class map_pt_1 extends Phaser.Scene {
 
         this.physics.add.collider(this.enemie,this.enemie);
 
+
+        this.anims.create({
+            key: 'Tright',
+            frames: this.anims.generateFrameNumbers('perso', { start: 33, end: 35 }),
+            frameRate: 10,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'Tleft',
+            frames: this.anims.generateFrameNumbers('perso', { start: 36, end: 38 }),
+            frameRate: 10,
+            repeat: -1
+        });
 
 
         this.anims.create({
@@ -341,14 +355,24 @@ class map_pt_1 extends Phaser.Scene {
             this.HB.y=this.player.y+32;
         }
         else if (this.clavier.Q.isDown) {
+            if (this.clavier.E.isDown){
+                this.player.anims.play('Tleft', true);
+            }
+            else{
+                this.player.anims.play('left', true);
+            }
             this.player.setVelocityX(-200);
-            this.player.anims.play('left', true);
             this.HB.x=this.player.x-32;
             this.HB.y=this.player.y;
         }
         else if (this.clavier.D.isDown) {
+            if (this.clavier.E.isDown){
+                this.player.anims.play('Tright', true);
+            }
+            else{
+                this.player.anims.play('right', true);
+            }
             this.player.setVelocityX(200);
-            this.player.anims.play('right', true);
             this.HB.x=this.player.x+32;
             this.HB.y=this.player.y;
         }
@@ -1204,6 +1228,7 @@ class map_pt_2 extends Phaser.Scene {
         
         
         if(this.clavier.E.isDown){
+            this.player.anims.play('Tleft', true);
             if(CD==true){
                 CD=false
                 this.HB.enableBody()
@@ -1822,10 +1847,12 @@ class map_pt_3 extends Phaser.Scene {
         //const plateforme = carteDuNiveau.createLayer("map_base",tileset);
         const Sol = carteDuNiveau.createLayer('map_base',tileset);
         //const Sol2 = carteDuNiveau.createLayer('mur_inférieur',tileset);
-        const Sol2 = carteDuNiveau.createLayer('mur2',tileset);
 
         const murSolide = carteDuNiveau.createLayer('mur',tileset);
+        const Sol2 = carteDuNiveau.createLayer('mur2',tileset);
+
         Sol.setCollisionByProperty({estSolide: true});
+        Sol2.setCollisionByProperty({estSolide: true});
         murSolide.setCollisionByProperty({ estSolide: true }); 
         this.player = this.physics.add.sprite(42*32, 4*32, 'perso');
         this.physics.add.collider(this.player, murSolide);

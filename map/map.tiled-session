@@ -102,8 +102,8 @@
             "scale": 0.33,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 3157.5757575757575,
-                "y": 589.3939393939394
+                "x": 1745.4545454545455,
+                "y": 3640.909090909091
             }
         },
         "map_pt_1.json#Tuile": {
@@ -154,11 +154,11 @@
             "scaleInDock": 1
         },
         "map_pt_3.json": {
-            "scale": 1.5,
-            "selectedLayer": 2,
+            "scale": 0.33,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 1282,
-                "y": 153
+                "x": 1124.2424242424245,
+                "y": 971.2121212121211
             }
         },
         "map_pt_3.json#Tuile": {
