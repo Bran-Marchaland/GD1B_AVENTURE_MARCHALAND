@@ -2,6 +2,7 @@ var HP = 10;
 var invincible = false;
 var CD = true;
 var i = 0;
+var nbrP = 1;
 
 class map_pt_1 extends Phaser.Scene {
     constructor() {
@@ -11,6 +12,7 @@ class map_pt_1 extends Phaser.Scene {
 
     preload(){
         this.load.tilemapTiledJSON("mapPt1","map/map_pt_1.json");
+        this.load.image("potion", "sprite/potion.png");
         this.load.image("phaser_assets", "map/tuile.png");
         this.load.image("hitBox", "sprite/hitbox.png");
         this.load.spritesheet('perso','sprite/perso_pixel.png',
@@ -31,6 +33,11 @@ class map_pt_1 extends Phaser.Scene {
         const murSolide = carteDuNiveau.createLayer('mur',tileset);
         const collectible = carteDuNiveau.createLayer('collectible',tileset);
         const tp = carteDuNiveau.createLayer('Teleporteur',tileset);
+        this.potion = this.physics.add.sprite(365,270, 'potion').setScale(1).setScrollFactor(0);
+        this.texteDuDialogue= this.add.text(385 ,260, nbrP, { fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif', fontSize: 30 }).setScale(0.6).setScrollFactor(0);
+
+
+
         this.enemie = this.physics.add.group ()
             this.enemie.create(40*32, 125*32, 'monster');
             this.enemie.create(44*32, 135*32, 'monster');
@@ -67,8 +74,10 @@ class map_pt_1 extends Phaser.Scene {
             this.enemie.create(64*32, 33*32, 'monster');
             this.enemie.create(40*32, 53*32, 'monster');
         murSolide.setCollisionByProperty({ estSolide: true }); 
-        this.player = this.physics.add.sprite(134*32, 11*32, 'perso');
+        this.player = this.physics.add.sprite(133*32, 13*32, 'perso');
         this.physics.add.collider(this.player, murSolide);
+        this.physics.add.overlap(this.player, this.potion,this.Drop,null,this);
+
 
         tp.setCollisionByExclusion(-1, true);
         this.cameras.main.setBounds(192, 32, 7968, 4768);
@@ -153,7 +162,7 @@ class map_pt_1 extends Phaser.Scene {
         this.physics.add.overlap(this.player, this.enemie.getChildren()[33], this.PerdHP, null, this);
 
 
-        this.physics.add.overlap(this.HB,this.enemie.getChildren()[0],function(){this.enemie.getChildren()[0].disableBody(true,true)},null,this)
+        this.physics.add.overlap(this.HB,this.enemie.getChildren()[0],function(){this.enemie.getChildren()[0].disableBody(true,true);this.kill(0)},null,this)
         this.physics.add.overlap(this.HB,this.enemie.getChildren()[1],function(){this.enemie.getChildren()[1].disableBody(true,true)},null,this)
         this.physics.add.overlap(this.HB,this.enemie.getChildren()[2],function(){this.enemie.getChildren()[2].disableBody(true,true)},null,this)
         this.physics.add.overlap(this.HB,this.enemie.getChildren()[3],function(){this.enemie.getChildren()[3].disableBody(true,true)},null,this)
@@ -670,6 +679,20 @@ class map_pt_1 extends Phaser.Scene {
         }
     }
 
+
+
+    kill(i) {
+        console.log("kill")
+        this.enemie.getChildren()[0].disableBody(true, true);
+        this.potion = this.add.sprite(this.enemie.getChildren()[0].x, this.enemie.getChildren()[0].y, "potion")
+    } 
+
+   Drop() {
+        console.log("drop");
+        this.potion.disableBody(true, true);
+        nbrP += 1;
+    }
+
     phase2(){
         this.scene.start("map_pt_2")
     }
@@ -701,6 +724,7 @@ class map_pt_2 extends Phaser.Scene {
     preload(){
         this.load.tilemapTiledJSON("mapPt2","map/map_pt_2.json");
         this.load.image("phaser_assets", "map/tuile.png");
+        this.load.image("potion", "sprite/potion.png");
         this.load.image("hitBox", "sprite/hitbox.png");
         this.load.spritesheet('perso','sprite/perso_pixel.png',
                 { frameWidth: 32, frameHeight: 32 });
@@ -801,6 +825,7 @@ class map_pt_2 extends Phaser.Scene {
         this.physics.add.collider(this.player,tp1,this.phase3,null,this);
         this.physics.add.collider(this.player,tp2,this.phase1,null,this);
         this.clavier = this.input.keyboard.addKeys('S,Q,D,Z,E,SPACE,SHIFT');
+        this.potion = this.physics.add.sprite(365,190, 'potion').setScale(1).setScrollFactor(0);
 
         this.vie=this.add.sprite(470,220,'HP').setScale(0.1).setScrollFactor(0);
         this.HB=this.physics.add.sprite(this.player.x+32,this.player.y,"hitBox");
@@ -1797,12 +1822,15 @@ class map_pt_3 extends Phaser.Scene {
         //const plateforme = carteDuNiveau.createLayer("map_base",tileset);
         const Sol = carteDuNiveau.createLayer('map_base',tileset);
         //const Sol2 = carteDuNiveau.createLayer('mur_inférieur',tileset);
+        const Sol2 = carteDuNiveau.createLayer('mur2',tileset);
+
         const murSolide = carteDuNiveau.createLayer('mur',tileset);
         Sol.setCollisionByProperty({estSolide: true});
         murSolide.setCollisionByProperty({ estSolide: true }); 
         this.player = this.physics.add.sprite(42*32, 4*32, 'perso');
         this.physics.add.collider(this.player, murSolide);
         this.physics.add.collider(this.player, Sol);
+        this.physics.add.collider(this.player, Sol2);
 
     
         //tp1.setCollisionByExclusion(-1, true);
